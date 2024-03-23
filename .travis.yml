@@ -1,0 +1,28 @@
+language: java
+matrix:
+  include:
+    - jdk: openjdk8
+      install: true
+    - jdk: openjdk11
+      install: true
+    - jdk: openjdk14
+      install: true
+before_install:
+    - sudo apt-get update -qq
+install: mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+script: mvn clean test
+cache:
+    directories:
+    - $HOME/.m2
+branches:
+    except:
+        - gh-pages
+        - 0.5-branch
+        - 0.6-branch
+        - 0.7-branch
+        - 0.8-branch
+notifications:
+    email:
+        recipients:
+        - pholser@alumni.rice.edu
+

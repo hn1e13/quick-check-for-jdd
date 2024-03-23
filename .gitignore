@@ -1,0 +1,14 @@
+.idea/
+.github/
+conf/
+.classpath
+.project
+.settings
+*.iml
+*.ipr
+*.iws
+bin
+target
+*~
+.*~
+*.hs
